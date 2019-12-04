@@ -1,3 +1,17 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 #cx {
 	background: #01011c;
+}
+
+#show-number {
+  background: black;
+  color: #eee;
+  height: 2em;
+  width: fit-content;
+  font-size: 2em;
+  padding: 1em;
 }

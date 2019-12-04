@@ -38,8 +38,6 @@ draw_dot(point.x, point.y, position);
 
 X = [17, 13, 12, 15, 16, 14, 16, 16, 18, 19];
 Y = [94, 73, 59, 80, 93, 85, 66, 79, 77, 91];
-r = correlation_coefficient(X, Y);
 
-console.log("r: " + r);
-
-
+lin = new Linear(X, Y);
+show_number(10);

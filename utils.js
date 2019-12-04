@@ -11,8 +11,8 @@ function get_random_line(width, height) {
 }
 
 function draw_dot(x, y, position) {
-	size = 6;
-	if (position === "up") cx.fillStyle = "blue";
+	size = 10;
+	if (position === "up") cx.fillStyle = "pink";
 	else if (position === "down") cx.fillStyle = "green";
 	else if (position === "on") cx.fillStyle = "black"; //on the line
 	else cx.fillStyle = "red";
@@ -26,4 +26,9 @@ function get_random_point(width, height) {
 		'x': Math.floor(Math.random()*width),
 		'y': Math.floor(Math.random()*height)
 	}
+}
+
+function show_number(num) {
+  var p = document.getElementById("show-number");
+  p.innerHTML = num;
 }
