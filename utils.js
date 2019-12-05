@@ -10,12 +10,14 @@ function get_random_line(width, height) {
 		};
 }
 
-function draw_dot(x, y, position) {
+function draw_dot(x, y, position, color = undefined) {
 	size = 10;
 	if (position === "up") cx.fillStyle = "pink";
 	else if (position === "down") cx.fillStyle = "green";
 	else if (position === "on") cx.fillStyle = "black"; //on the line
 	else cx.fillStyle = "red";
+
+  cx.fillStyle = (typeof(color) !== 'undefined')? cx.fillStyle : color;
 
 	cx.translate(-size/2, -size/2);
 	cx.fillRect(x, y, size, size);
@@ -28,7 +30,7 @@ function get_random_point(width, height) {
 	}
 }
 
-function show_number(num) {
+function show_text(text) {
   var p = document.getElementById("show-number");
-  p.innerHTML = num;
+  p.innerHTML = text;
 }
