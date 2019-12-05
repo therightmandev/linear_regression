@@ -10,17 +10,17 @@ function get_random_line(width, height) {
 		};
 }
 
-function draw_dot(x, y, position, color = undefined) {
+function draw_dot(x, y, position) {
 	size = 10;
 	if (position === "up") cx.fillStyle = "pink";
 	else if (position === "down") cx.fillStyle = "green";
 	else if (position === "on") cx.fillStyle = "black"; //on the line
 	else cx.fillStyle = "red";
 
-  cx.fillStyle = (typeof(color) !== 'undefined')? cx.fillStyle : color;
-
-	cx.translate(-size/2, -size/2);
-	cx.fillRect(x, y, size, size);
+	t = size/2;
+	cx.translate(-t, -t);
+	cx.fillRect(x * width/graph_width, y*height/graph_height, size, size);
+	cx.translate(t, t);
 }
 
 function get_random_point(width, height) {

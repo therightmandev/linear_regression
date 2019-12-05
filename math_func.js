@@ -24,6 +24,7 @@ class Linear {
   calc_slope() {
     var y_std_dev = Math.sqrt(this.y_sq_dev / (this.Y.length - 1));
     var x_std_dev = Math.sqrt(this.x_sq_dev / (this.X.length - 1));
+    console.log("y: " + y_std_dev + ", x: " + x_std_dev);
     return this.r * y_std_dev / x_std_dev;
   }
 
