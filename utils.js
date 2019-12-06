@@ -30,6 +30,31 @@ function get_random_point(width, height) {
 	}
 }
 
+function draw_line(x1, y1, x2, y2, color) {
+    cx.strokeStyle = color;
+    cx.beginPath();
+    cx.moveTo(x1, y1);
+    cx.lineTo(x2, y2);
+    cx.stroke();
+}
+
+function draw_grid() {
+  for (var i=0; i<graph_width; i++) {
+    var x = i*width/graph_width;
+    draw_line(x, 0, x, height, "#27274a");
+    cx.fillStyle = "white";
+    cx.font = "10px Arial";
+    cx.fillText("" + i, x, 15);
+  }
+  for (var i=0; i<graph_height/10+1; i++) {
+    var y = i*width/graph_height*10;
+    draw_line(0, y, width, y, "#27274a");
+    cx.fillStyle = "white";
+    cx.font = "10px Arial";
+    cx.fillText(i*10, 5, y-1);
+  }
+}
+
 function show_text(text) {
   var p = document.getElementById("show-number");
   p.innerHTML = text;

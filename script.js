@@ -18,25 +18,12 @@ function get_position(x, y, m, b) {
   return "on";
 }
 
-// Get random line
-rl = get_random_line(width, height);
-m = (rl.y2 - rl.y1)/width; //slope
-b = rl.y1 // y intercept
-
-// Draw line
-cx.strokeStyle = "lightblue";
-cx.beginPath();
-cx.moveTo(rl.x1, rl.y1);
-cx.lineTo(rl.x2, rl.y2);
-cx.stroke();
-
 const X = [17, 13, 12, 15, 16, 14, 16, 16, 18, 19];
 const Y = [94, 73, 59, 80, 93, 85, 66, 79, 77, 91];
 
 lin = new Linear(X, Y);
-show_text("r: " + lin.r + "<br>" + 
-          "m: " + m + "<br>" +
-          "b: " + b);
+show_text("m: " + lin.slope + "<br>" +
+          "b: " + lin.y_intercept);
 
 
 //norm_x = X.map(el => el*25);
@@ -44,16 +31,11 @@ show_text("r: " + lin.r + "<br>" +
 data = [];
 for (i=0; i<X.length; i++) data[i] = [X[i], Y[i]];
 
+draw_grid();
 // Draw vector points
 for (i=0; i<data.length; i++) {
 	draw_dot(data[i][0], data[i][1], "hi");
-	console.log(data[i][0])
 }
 
-// Draw 50 random points
-/*for (var i=0; i<50; i++) {
-  point = get_random_point(width, height);
-  position = get_position(point.x, point.y, m, b);
-  draw_dot(point.x, point.y, position);
-}*/
-
+draw_line(0, lin.y_intercept*height/graph_height,
+          width, lin.func(graph_width)*height/graph_height, "white");

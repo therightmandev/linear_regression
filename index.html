@@ -17,7 +17,17 @@
 	<script src="math_func.js"></script>
 	<script src="script.js"></script>
   <br>
-  When \(a \ne 0\), there are two solutions to \(ax^2 + bx + c = 0\) and they are
-  $$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$
+  <div class="math">
+    <h3>How the function is obtained</h3>
+    <p>
+      The function is \(y = mx + b\) where
+      $$m = r{S_y \over S_x}$$
+      $$r = {\sum ((x-\bar x)(y-\bar y))  \over \sqrt{\sum (x-\bar x)^2 \sum (y-\bar y)^2}}$$
+      $$ S_y = \sum (y-\bar y)^2$$ $$S_x = \sum (x-\bar x)^2$$
+      \(r\) is the correlation coefficient, \(S_y\) and \(S_x\) are the standard deviations of x and y. <br>
+      To calculate \(b\), we just need the slope and the averages
+      $$ b = \bar y - m\bar x $$
+    </p>
+  </div>
 </body>
 </html>

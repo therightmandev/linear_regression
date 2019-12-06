@@ -24,7 +24,6 @@ class Linear {
   calc_slope() {
     var y_std_dev = Math.sqrt(this.y_sq_dev / (this.Y.length - 1));
     var x_std_dev = Math.sqrt(this.x_sq_dev / (this.X.length - 1));
-    console.log("y: " + y_std_dev + ", x: " + x_std_dev);
     return this.r * y_std_dev / x_std_dev;
   }
 
@@ -37,9 +36,12 @@ class Linear {
     this.y_sq_dev = this.calc_sq_dev(this.Y, this.y_mean); //y squared deviaton sum((yi-y)^2)
     this.r = this.calc_correlation_coefficient(this.X, this.Y) // correlation coefficient
     this.slope = this.calc_slope();
-    console.log("slope " + this.slope);
+    this.y_intercept = this.y_mean - this.slope * this.x_mean;
   }
 
+  func(x) {
+    return x*this.slope + this.y_intercept;
+  }
 }
 
 

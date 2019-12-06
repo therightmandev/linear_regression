@@ -1,6 +1,12 @@
 * {
   margin: 0;
   padding: 0;
+  color: #eee;
+}
+
+body {
+  background: #01011c;
+  padding-bottom: 2em;
 }
 
 #cx {
@@ -13,4 +19,15 @@
   width: fit-content;
   font-size: 2em;
   padding: 1em;
+}
+
+.math {
+  max-width: 30em;
+  margin: 0 auto;
+  color: #eee;
+  font-size: 22px;
+}
+
+h3 {
+  margin-bottom: 1em;
 }
