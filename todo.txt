@@ -1,0 +1,2 @@
+Make input data interactive: add field to input your own X and Y arrays
+Add spoiler on math
