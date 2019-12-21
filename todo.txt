@@ -1,2 +1,2 @@
-Make input data interactive: add field to input your own X and Y arrays
+Make input button "Update" actually update the data and reload the simulation
 Add spoiler on math

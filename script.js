@@ -18,16 +18,28 @@ function get_position(x, y, m, b) {
   return "on";
 }
 
-const X = [17, 13, 12, 15, 16, 14, 16, 16, 18, 19];
-const Y = [94, 73, 59, 80, 93, 85, 66, 79, 77, 91];
+function update_values() {
+  console.log("Updating values haha");
+}
+
+var X = [17, 13, 12, 15, 16, 14, 16, 16, 18, 19];
+var Y = [94, 73, 59, 80, 93, 85, 66, 79, 77, 91];
+
+
+inp = document.createElement("input");
+inp.id = "x-input";
+for (i=0; i<X.length; i++) inp.value += " " + X[i] + "," + Y[i];
+document.getElementById("X-input").appendChild(inp);
+
+
+button = document.getElementById("update-values");
+button.onclick = update_values;
 
 lin = new Linear(X, Y);
 show_text("m: " + lin.slope + "<br>" +
           "b: " + lin.y_intercept);
 
 
-//norm_x = X.map(el => el*25);
-//norm_y =Y.map(el => el*5);
 data = [];
 for (i=0; i<X.length; i++) data[i] = [X[i], Y[i]];
 
